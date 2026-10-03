@@ -3,7 +3,7 @@ const btn = document.getElementById('btn')
 const label = document.getElementById('label')
 const main = document.querySelector('main')
 const body = document.querySelector('body')
-
+let acesa = false
 let quebrada = false
 
 btn.addEventListener('change', () => {
@@ -16,6 +16,26 @@ btn.addEventListener('change', () => {
         lampada.src = "assets/lampada-apagada.png"
         label.src = "assets/switch-off.png"
         body.style.backgroundColor = "#111111"
+    }
+    if (quebrada) {
+        lampada.src = "assets/lampada-quebrada.png"
+        body.style.backgroundColor = "#111111"
+        return
+    }
+})
+
+document.addEventListener('keydown', (tecla) => {
+    if (tecla.key === " " && !acesa) {
+        lampada.src = "assets/lampada-acesa.png"
+        label.src = "assets/switch-on.png"
+        body.style.backgroundColor = "#fafafa"
+        acesa = true
+    }
+    else {
+        lampada.src = "assets/lampada-apagada.png"
+        label.src = "assets/switch-off.png"
+        body.style.backgroundColor = "#111111"
+        acesa = false
     }
     if (quebrada) {
         lampada.src = "assets/lampada-quebrada.png"
