@@ -29,12 +29,14 @@ document.addEventListener('keydown', (tecla) => {
         lampada.src = "assets/lampada-acesa.png"
         label.src = "assets/switch-on.png"
         body.style.backgroundColor = "#fafafa"
+        btn.checked = true
         acesa = true
     }
     else {
         lampada.src = "assets/lampada-apagada.png"
         label.src = "assets/switch-off.png"
         body.style.backgroundColor = "#111111"
+        btn.checked = false
         acesa = false
     }
     if (quebrada) {
